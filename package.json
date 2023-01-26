@@ -1,8 +1,8 @@
 {
-  "name": "gpt3-writer-extension-test2",
-  "displayName": "Gpt3 writer extension test2",
-  "version": "0.0.0",
-  "description": "A basic Plasmo extension.",
+  "name": "bruno-ipsum",
+  "displayName": "Bruno Ipsum",
+  "version": "0.0.1",
+  "description": "A Lorem Ipsum generator based on Bruno Munari.",
   "author": "m",
   "license": "Copyright (c) 2023",
   "scripts": {

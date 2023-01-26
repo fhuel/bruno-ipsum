@@ -39,30 +39,31 @@ const generateCompletionAction = async (info) => {
 
     const { selectionText } = info
     const basePromptPrefix = `
-    Write me a detailed table of contents for a blog post with the title below.
+    Scrivimi, senza numberazione, senza virgolette e senza citare l'autore, una citazioni di Bruno munari lunga cinque paragrafi sull'argomento. In modo che possa essere usato come un sostituto di un Lorem Ipsum.
 
-    Title:
+    Argomento:
     `
 
     // Add this to call GPT-3
     const baseCompletion = await generate(`${basePromptPrefix}${selectionText}`)
 
-    // Add your second prompt here
-    const secondPrompt = `
-      Take the table of contents and title of the blog post below and generate a blog post written in thwe style of David Attenborough. Make it feel like a story. Don't just list the points. Go deep into each one. Explain why.
+    // // Add your second prompt here
+    // const secondPrompt = `
+    //   Take the table of contents and title of the blog post below and generate a twitter thread, with numbered tweets in the style of David Attenborough. Make it feel like a story. Don't just list the points. Go deep into each one. Explain why.
 
-      Title: ${selectionText}
+    //   Title: ${selectionText}
 
-      Table of Contents: ${baseCompletion.text}
+    //   Table of Contents: ${baseCompletion.text}
 
-      Blog Post:
-      `
+    //   Blog Post:
+    //   `
 
-    // Call your second prompt
-    const secondPromptCompletion = await generate(secondPrompt)
+    // // Call your second prompt
+    // const secondPromptCompletion = await generate(secondPrompt)
 
-    // Send the output when we're all done
-    sendMessage(secondPromptCompletion.text)
+    // // Send the output when we're all done
+    // sendMessage(secondPromptCompletion.text)
+    sendMessage(baseCompletion.text)
   } catch (error) {
     console.log(error)
     // Add this here as well to see if we run into any errors!
